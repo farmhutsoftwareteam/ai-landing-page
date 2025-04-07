@@ -1,0 +1,110 @@
+---
+description: Useful for designing pages and components
+globs: 
+alwaysApply: false
+---
+# Design Principles
+
+These design principles are derived from our work on the landing page components (navbar, hero, and vision input) and serve as baseline rules for the entire application.
+
+## Typography Hierarchy
+
+- **Font Family**: Cormorant Garamond for all visible text elements
+- **Size Scale**:
+  - Main titles: 10-22rem with 400 weight
+  - Navigation: 3rem with normal weight
+  - Buttons and input text: 1.5-2rem with semibold for CTAs, normal for regular content
+  - Supporting text: 1.25-1.5rem with 300-400 weight
+- **Styling**:
+  - Maintain consistent letter spacing (slightly loose for elegance)
+  - Avoid italic styles entirely
+  - Use uppercase for taglines, standard case for titles, lowercase for subtitles
+
+## Black and White Color System
+
+- **Background**: Pure black (#000000) for all primary surfaces
+- **Text**: Pure white (#FFFFFF) for maximum contrast and readability
+- **Primary CTA**: Inverted colors (white background with black text)
+- **Secondary elements**: Ghost/outline styles with white text and transparent backgrounds
+- **Borders**: Use white with varying opacity levels:
+  - 20% for subtle borders
+  - 40% for focused states
+  - 60% for more visible elements
+  - 90% for high emphasis
+
+## Interactive Element Styling
+
+- **Input Fields**:
+  - Text size should be proportional to field height (4xl text with h-16 height)
+  - Black background with subtle white border (white/20)
+  - High contrast placeholder text (white/90)
+  - Increase border opacity on focus (white/40)
+- **Button Hierarchy**:
+
+  - Primary: Filled white with black text for primary actions
+  - Secondary: Ghost style with white text for secondary actions
+  - Hover states: Subtle transparency changes (white/90 for primary, white/10 for secondary)
+
+- **Focus States**:
+  - Increase border opacity rather than changing colors
+  - Maintain black backgrounds on focus
+
+## Animation and Motion
+
+- **Typing Effect**:
+  - Use for placeholder text to suggest examples
+  - Natural pacing with varied timing (70-120ms for typing, 30ms for deletion)
+  - Include strategic pauses (1500ms) at meaningful points
+- **Principles**:
+  - Keep animations subtle and purposeful
+  - Limit motion to where it enhances understanding or engagement
+  - Use smooth transitions between states (200ms)
+  - Prefer horizontal animations to vertical ones
+
+## Layout and Spacing
+
+- **Navigation**: Fixed at top of viewport
+- **Hero Sections**: Centered, full-height
+- **Element Alignment**:
+  - Precisely measured alignment between elements (exact width matching between title and input)
+  - Use dynamic width calculation (via useRef and useState) for exact matching
+- **Spacing**:
+  - Generous vertical spacing between major elements (6-8rem)
+  - Consistent padding within elements (px-6, py-4)
+  - Maintain breathing room around text (especially inputs)
+
+## Responsive Behavior
+
+- **Proportional Sizing**: Maintain across all viewports
+- **Centered Layouts**: Preserve on all devices
+- **Text Alignment**: Maintain asymmetrical text positioning
+- **Dynamic Calculations**: Use React hooks for precise element matching
+
+## Element Proportions
+
+- **Input Fields**: Height should be approximately 4× the font size height
+- **Buttons**: Size proportional to contained text (px-6 for sign up)
+- **Icons**: Size in proportion to their container (h-6 in a h-12 button)
+- **Border Thickness**: 1px for most elements, 2px for emphasized items
+
+## Interaction Patterns
+
+- **Input Fields**:
+  - Pre-populate with example content via typing animation
+  - Clear on focus, resume animation on blur if empty
+  - Maintain text size and weight when typing
+- **Buttons**:
+  - Provide subtle but noticeable hover states
+  - Use ghost variant for secondary actions
+  - Consistent padding and sizing
+
+## Implementation Guidelines
+
+- Use shadcn/ui as foundation
+- Extend with custom CSS when necessary
+- Maintain pure black backgrounds
+- Prefer Tailwind classes for styling
+- Separate components when mixing styling approaches
+- Use CSS modules for custom layouts
+- Use inline styles for dynamic calculations
+- Maintain TypeScript typing
