@@ -1,0 +1,62 @@
+.container {
+    background-color: black;
+    color: #f5f5f0;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-family: var(--font-cormorant);
+    font-size: 22rem;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.035em;
+    position: relative;
+    margin: 0;
+    z-index: 1;
+}
+
+/* This wraps everything so we can anchor everything to the title's horizontal center */
+.alignWrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+}
+
+/* This matches 'I' with 'J' */
+.tagline {
+    font-family: var(--font-cormorant);
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 0.03em;
+    margin-bottom: 2rem;
+    transform: translateX(-0.05em);
+    /* minor font-level tweak if needed */
+    white-space: nowrap;
+}
+
+/* Juliet stays center */
+.title {
+    text-align: left;
+}
+
+/* This matches 'r' with 't' */
+.subtitle {
+    font-family: var(--font-cormorant);
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    margin-top: 2rem;
+    text-align: right;
+    transform: translateX(0.05em);
+    /* minor font-level tweak if needed */
+    opacity: 0.85;
+    white-space: nowrap;
+}
