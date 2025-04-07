@@ -1,12 +1,12 @@
 'use client';
 
 import { Button } from "../../components/ui/button";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { signInWithProvider } from "../../backend/auth";
 
-export default function AuthPage() {
+function AuthContent() {
     const searchParams = useSearchParams();
     const [isSignUp, setIsSignUp] = useState(true);
     const [isLoading, setIsLoading] = useState(false);
@@ -111,5 +111,17 @@ export default function AuthPage() {
                 </div>
             </div>
         </div>
+    );
+}
+
+export default function AuthPage() {
+    return (
+        <Suspense fallback={
+            <div className="min-h-screen bg-black text-white flex items-center justify-center">
+                <div className="font-cormorant text-2xl">Loading...</div>
+            </div>
+        }>
+            <AuthContent />
+        </Suspense>
     );
 }
